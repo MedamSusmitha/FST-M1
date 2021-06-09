@@ -3,8 +3,9 @@ package CRM;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 
-public class CRM_TC04_LoggingIntoTheSite {
+public class Activity6_VerifyActivityMenu {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -15,8 +16,10 @@ public class CRM_TC04_LoggingIntoTheSite {
 		driver.findElement(By.id("user_name")).sendKeys("admin");
 		driver.findElement(By.id("username_password")).sendKeys("pa$$w0rd");
 		driver.findElement(By.id("bigbutton")).submit();
-		String title=driver.getTitle();
-		System.out.println("Verify home page="+title);
+		String ActualResult=driver.findElement(By.id("grouptab_3")).getText();
+		String ExpecRe="ACTIVITIES";
+		Assert.assertEquals(ActualResult, ExpecRe);
+		System.out.println("ACTIVITIES menu is verified");
 		driver.close();
 
 	}

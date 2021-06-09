@@ -1,15 +1,14 @@
 package CRM;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import java.util.Iterator;
-import java.util.Set;
 
-public class CRM_TC07_ReadingAdditionalInformation {
+public class Activity9_TraversingTables2 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -24,10 +23,23 @@ public class CRM_TC07_ReadingAdditionalInformation {
 		driver.findElement(By.id("grouptab_0")).click();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.findElement(By.id("moduleTab_9_Leads")).click();
-		driver.findElement(By.xpath("(//*[@class='suitepicon suitepicon-action-info'])[2]")).click();
-		WebElement mo = driver.findElement(By.xpath(".//div[@id='ui-id-5']/span"));
-		String mobile = mo.getText();
-		System.out.println("Mobile is:" + mobile);
+		List<WebElement> rows = driver.findElements(By.xpath("//*[@id='MassUpdate']/div[3]/table/tbody/tr/td"));
+		for (int i = 1; i <= rows.size(); i++) {
+
+			for (int j = 1; j <= rows.size(); j++) {
+
+				if (i <= 10)
+
+				{
+
+					if (j == 3 || j == 8) {
+						WebElement row = driver.findElement(
+								By.xpath("//*[@id='MassUpdate']/div[3]/table/tbody/tr[" + i + "]/td[" + j + "]"));
+						System.out.println("Row " + i + ": " + row.getText());
+					}
+				}
+			}
+		}
 		driver.close();
 
 	}

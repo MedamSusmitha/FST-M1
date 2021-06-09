@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import junit.framework.Assert;
 
-public class CRM_TC01_VerifyTitle {
+public class Activity1_VerifyTitle {
 
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub

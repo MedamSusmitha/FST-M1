@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 //@Test(priority=1)
 
-public class CRM_TC03_GetCopyRightText {
+public class Activity3_GetCopyRightText {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
